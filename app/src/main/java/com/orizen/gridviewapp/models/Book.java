@@ -4,31 +4,38 @@ import java.util.ArrayList;
 
 public class Book {
 
-    int id;
+    long id;
     private String bookTitle;
     private String authorName;
 
-    public Book(int id, String bookTitle, String authorName) {
+    public Book(long id, String bookTitle, String authorName) {
         this.authorName = authorName;
         this.bookTitle = bookTitle;
         this.id  = id;
     }
 
+    public Book() {
+        authorName = "";
+        bookTitle = "";
+        id= 0;
+    }
+
+    public boolean isEmpty() {
+        return id == 0 && authorName.isEmpty() && bookTitle.isEmpty();
+    }
+
     public void setBookTitle(String title){
         this.bookTitle = title;
     }
-
     public void setAuthorName(String author) {
         this.authorName = author;
     }
-
-    public void setId(int id){
+    public void setId(long id){
         this.id = id;
     }
-
     public String getBookTitle() { return bookTitle; }
     public String getAuthorName() { return authorName; }
-    public int getId() { return id; }
+    public long getId() { return id; }
 
     public static ArrayList<Book> getDummyBooks() {
 

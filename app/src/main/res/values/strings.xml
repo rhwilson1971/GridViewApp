@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">GridViewApp</string>
+    <string name="author_hint_text">Charles Dickens</string>
+    <string name="title_hint_text">A Tale of Two Cities</string>
+    <string name="save_button_text">Save</string>
 </resources>

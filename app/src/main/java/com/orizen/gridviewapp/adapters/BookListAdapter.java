@@ -9,16 +9,17 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.orizen.gridviewapp.R;
 import com.orizen.gridviewapp.models.Book;
 
 public class BookListAdapter extends ArrayAdapter<Book> {
+    int layoutId;
 
-    public BookListAdapter(@NonNull Context context, @NonNull List<Book> books) {
-        super(context, 0, books);
+    public BookListAdapter(@NonNull Context context, @NonNull int resId, @NonNull List<Book> books) {
+        super(context, resId, books);
+        layoutId = resId;
     }
 
     @Override
@@ -27,7 +28,7 @@ public class BookListAdapter extends ArrayAdapter<Book> {
         View gridView = convertView;
 
         if(gridView == null) {
-            gridView = LayoutInflater.from(getContext()).inflate(R.layout.book_list_item, parent,  false);
+            gridView = LayoutInflater.from(getContext()).inflate(layoutId, parent,  false);
         }
 
         // get views and set to the current object values
